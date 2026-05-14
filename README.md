@@ -67,5 +67,5 @@ binary.
 ## Issues, docs, contact
 
 - **Docs & changelog:** [phi.philtechs.org](https://phi.philtechs.org)
-- **Bug reports:** [github.com/philtechs-org/phi/issues](https://github.com/philtechs-org/phi/issues)
+- **Bug reports:** [bugs@phi.philtechs.org](mailto:bugs@phi.philtechs.org)
 - **License:** MIT
