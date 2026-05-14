@@ -1,64 +1,71 @@
- # phi releases
+# phi releases
 
-  Binary release artifacts for **phi**, the npm supply-chain firewall.
+[![Latest release](https://img.shields.io/github/v/release/philtechs-org/phi-releases?label=release&color=84cc16)](https://github.com/philtechs-org/phi-releases/releases/latest)
+[![Downloads (total)](https://img.shields.io/github/downloads/philtechs-org/phi-releases/total?label=downloads&color=84cc16)](https://github.com/philtechs-org/phi-releases/releases)
+[![Downloads (latest)](https://img.shields.io/github/downloads/philtechs-org/phi-releases/latest/total?label=downloads%40latest&color=84cc16)](https://github.com/philtechs-org/phi-releases/releases/latest)
+[![License](https://img.shields.io/github/license/philtechs-org/phi?color=84cc16)](https://github.com/philtechs-org/phi/blob/main/LICENSE)
 
-  This repo is a release container only — there is no source code here.
-  The source lives at **[github.com/philtechs-org/phi](https://github.com/philtechs-org/phi)**.
-  Tagged releases of phi are built by CI on the source repo and uploaded
-  here so the install scripts and `phi self-update` always have a stable
-  download surface.
+Binary release artifacts for **phi**, the npm supply-chain firewall.
 
-  ## Install
+This repo is a release container only — there is no source code here.
+The landing page lives at **[github.com/philtechs-org/phi](https://github.com/philtechs-org/phi)**,
+and tagged releases of phi are built by CI and uploaded here so the install
+scripts and `phi self-update` always have a stable download surface.
 
-  **Linux / macOS**
+## Install
 
-  ```sh
-  curl -sSL https://phi.philtechs.org/install.sh | sh
+**Linux / macOS**
 
-  Windows (PowerShell)
+```sh
+curl -sSL https://phi.philtechs.org/install.sh | sh
+```
 
-  iwr -useb https://phi.philtechs.org/install.ps1 | iex
+**Windows (PowerShell)**
 
-  Both scripts fetch the latest release from this repo, verify the
-  sha256 against checksums.txt, and drop the phi binary on your PATH.
+```powershell
+iwr -useb https://phi.philtechs.org/install.ps1 | iex
+```
 
-  Manual download
+Both scripts fetch the latest release from this repo, verify the
+sha256 against `checksums.txt`, and drop the `phi` binary on your PATH.
 
-  Grab a binary directly from the Releases page (https://github.com/philtechs-org/phi-releases/releases/latest).
-  Filenames follow the pattern:
+## Manual download
 
-  phi_<version>_<OS>_<arch>.{tar.gz,zip}
+Grab a binary directly from the [Releases page](https://github.com/philtechs-org/phi-releases/releases/latest).
+Filenames follow the pattern:
 
-  ┌───────────────────────┬────────────────────────────────┐
-  │       Platform        │             Asset              │
-  ├───────────────────────┼────────────────────────────────┤
-  │ Linux (x86_64)        │ phi_<ver>_Linux_x86_64.tar.gz  │
-  ├───────────────────────┼────────────────────────────────┤
-  │ Linux (arm64)         │ phi_<ver>_Linux_arm64.tar.gz   │
-  ├───────────────────────┼────────────────────────────────┤
-  │ macOS (Intel)         │ phi_<ver>_Darwin_x86_64.tar.gz │
-  ├───────────────────────┼────────────────────────────────┤
-  │ macOS (Apple Silicon) │ phi_<ver>_Darwin_arm64.tar.gz  │
-  ├───────────────────────┼────────────────────────────────┤
-  │ Windows (x86_64)      │ phi_<ver>_Windows_x86_64.zip   │
-  └───────────────────────┴────────────────────────────────┘
+```
+phi_<version>_<OS>_<arch>.{tar.gz,zip}
+```
 
-  Verify with:
+| Platform                | Asset                                    |
+|-------------------------|------------------------------------------|
+| Linux (x86_64)          | `phi_<ver>_Linux_x86_64.tar.gz`          |
+| Linux (arm64)           | `phi_<ver>_Linux_arm64.tar.gz`           |
+| macOS (Intel)           | `phi_<ver>_Darwin_x86_64.tar.gz`         |
+| macOS (Apple Silicon)   | `phi_<ver>_Darwin_arm64.tar.gz`          |
+| Windows (x86_64)        | `phi_<ver>_Windows_x86_64.zip`           |
 
-  sha256sum -c checksums.txt
+Verify with:
 
-  Self-update
+```sh
+sha256sum -c checksums.txt
+```
 
-  If you already have phi installed:
+## Self-update
 
-  phi self-update
+If you already have phi installed:
 
-  It hits this repo's GitHub API, downloads the matching asset for your
-  platform, verifies the checksum, and atomically replaces the running
-  binary.
+```sh
+phi self-update
+```
 
-  Issues, source, docs
+It hits this repo's GitHub API, downloads the matching asset for your
+platform, verifies the checksum, and atomically replaces the running
+binary.
 
-  - Source code & issues: https://github.com/philtechs-org/phi
-  - Docs & changelog: https://phi.philtechs.org
-  - License: MIT (see source repo)
+## Issues, docs, contact
+
+- **Docs & changelog:** [phi.philtechs.org](https://phi.philtechs.org)
+- **Bug reports:** [github.com/philtechs-org/phi/issues](https://github.com/philtechs-org/phi/issues)
+- **License:** MIT
